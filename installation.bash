@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # zsh
-sudo apt install tmux zsh fuse clangd gcc g++ cmake git unzip xclip python3.12-venv ripgrep -y
+sudo apt install tmux zsh fuse clangd gcc g++ cmake git unzip xclip ripgrep -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo chsh -s $(which zsh) $(whoami)
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k

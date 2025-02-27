@@ -1,3 +1,4 @@
+require "configs.nvimtreegit"
 return {
   filters = { dotfiles = false, git_clean = false, no_buffer = false, git_ignored = false },
   disable_netrw = true,
@@ -25,7 +26,12 @@ return {
           open = "",
           symlink = "",
         },
-        git = { unmerged = "" },
+        git = {
+          unmerged = "",
+          unstaged = "",
+          staged = "✓",
+          untracked = "",
+        },
       },
     },
   },
