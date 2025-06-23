@@ -9,12 +9,14 @@ lspconfig.servers = {
   "lua_ls",
   "clangd",
   "cmake",
+  "csharp_ls",
 }
 
 -- list of servers configured with default config.
 local default_servers = { "cmake" }
 
 local util = require "lspconfig.util"
+
 lspconfig.clangd.setup {
   cmd = { "clangd", "--background-index", "--clang-tidy", "--completion-style=detailed" },
   filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },

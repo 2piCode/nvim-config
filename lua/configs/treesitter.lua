@@ -17,6 +17,7 @@ local options = {
     "cpp",
     "make",
     "ninja",
+    "c_sharp",
   },
 
   highlight = {

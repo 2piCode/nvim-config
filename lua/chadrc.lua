@@ -9,9 +9,15 @@ M.base46 = {
   theme = "bearded-arc",
   transparency = true,
   -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
+  --     Comment = { italic = true },
+  --     ["@comment"] = { italic = true },
   -- },
+}
+
+M.ui = {
+  tabufline = {
+    enabled = false,
+  },
 }
 
 return M
