@@ -5,6 +5,8 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+
 -- map("n", "d", '"_d', { desc = "delete without yank" })
 -- map("n", "dd", '"_dd', { desc = "delete without yank" })
 -- map("n", "D", '"_D', { desc = "delete without yank" })
@@ -22,8 +24,8 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split 
 map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
-map("n", "+", "<C-w>>", { desc = "Increase current window width" })
-map("n", "_", "<C-w><", { desc = "Decrease current window width" })
+map("n", "(", "<C-w>>", { desc = "Increase current window width" })
+map("n", ")", "<C-w><", { desc = "Decrease current window width" })
 
 -- oil
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
