@@ -6,6 +6,7 @@ return {
     auto_session.setup({
       auto_restore_enabled = false,
       auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
+      cwd_change_handling = false, -- Не менять рабочую директорию при восстановлении сессии
     })
 
     local keymap = vim.keymap

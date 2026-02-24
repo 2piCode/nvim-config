@@ -7,7 +7,7 @@ local M = {}
 
 local live_multigrep = function(opts)
   opts = opts or {}
-  opts.cwd = opts.cwd or vim.uv.cwd()
+  opts.cwd = opts.cwd or vim.fn.getcwd()
 
   local finder = finders.new_async_job {
     command_generator = function(prompt)
@@ -47,7 +47,7 @@ local live_multigrep = function(opts)
 end
 
 M.setup = function()
-  vim.keymap.set("n", "<leader>fg", live_multigrep)
+  vim.keymap.set("n", "<leader>fw", live_multigrep)
 end
 
 return M
