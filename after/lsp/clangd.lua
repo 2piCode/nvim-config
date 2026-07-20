@@ -1,5 +1,6 @@
--- Настройка highlighting для clangd
-vim.lsp.config.clangd = {
+-- Настройка clangd: команда и кодировка
+-- vim.lsp.config() использует merge, не перезаписывает глобальные capabilities
+vim.lsp.config("clangd", {
   cmd = {
     "clangd",
     "--background-index",
@@ -9,57 +10,8 @@ vim.lsp.config.clangd = {
     "--function-arg-placeholders",
     "--fallback-style=llvm",
   },
-  capabilities = {
-    textDocument = {
-      semanticTokens = {
-        dynamicRegistration = true,
-        tokenTypes = {
-          "namespace",
-          "type",
-          "class",
-          "enum",
-          "interface",
-          "struct",
-          "typeParameter",
-          "parameter",
-          "variable",
-          "property",
-          "enumMember",
-          "event",
-          "function",
-          "method",
-          "macro",
-          "keyword",
-          "modifier",
-          "comment",
-          "string",
-          "number",
-          "regexp",
-          "operator",
-        },
-        tokenModifiers = {
-          "declaration",
-          "definition",
-          "readonly",
-          "static",
-          "deprecated",
-          "abstract",
-          "async",
-          "modification",
-          "documentation",
-          "defaultLibrary",
-        },
-        formats = { "relative" },
-        requests = {
-          range = true,
-          full = {
-            delta = true,
-          },
-        },
-      },
-    },
-  },
-}
+  offset_encoding = "utf-16",
+})
 
 -- Hotkey для переключения между header и source файлами
 vim.api.nvim_create_autocmd("LspAttach", {

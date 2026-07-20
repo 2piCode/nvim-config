@@ -1,26 +1,10 @@
 return {
   "p00f/clangd_extensions.nvim",
   ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
-  dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-  },
   config = function()
-    local cmp_nvim_lsp = require "cmp_nvim_lsp"
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
+    -- server key is not supported in this version of clangd_extensions.nvim
+    -- clangd is started by mason-lspconfig, cmd flags are in after/lsp/clangd.lua
     require("clangd_extensions").setup {
-      server = {
-        cmd = {
-          "clangd",
-          "--background-index",
-          "--clang-tidy",
-          "--header-insertion=iwyu",
-          "--completion-style=detailed",
-          "--function-arg-placeholders",
-          "--fallback-style=llvm",
-        },
-        capabilities = capabilities,
-      },
       extensions = {
         -- defaults:
         -- Automatically set inlay hints (type hints)

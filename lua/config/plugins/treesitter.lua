@@ -18,6 +18,7 @@ return {
         "bash",
         "c",
         "lua",
+        "python",
         "markdown",
         "vim",
         "vimdoc",

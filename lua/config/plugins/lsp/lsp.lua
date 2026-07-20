@@ -12,6 +12,9 @@ return {
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    -- Set consistent offset encoding to avoid warnings
+    capabilities.offsetEncoding = { "utf-16" }
+
     vim.lsp.config("*", {
       capabilities = capabilities,
     })

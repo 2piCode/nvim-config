@@ -38,3 +38,7 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- last line \n symbol
+opt.fixendofline = false
+opt.endofline = false

@@ -10,6 +10,21 @@ return {
         -- "cppcheck",
         "rust_analyzer",
         "cmake",
+        "basedpyright", -- Python LSP
+      },
+      -- automatically setup LSP servers installed via mason
+      handlers = {
+        -- default handler - auto-setup for all servers
+        function(server_name)
+          -- Skip these servers - they should not run as LSP
+          if server_name == "ruff" then
+            return -- ruff is used via conform.nvim and nvim-lint, not as LSP
+          end
+          if server_name == "pylsp" then
+            return -- we use basedpyright instead
+          end
+          require("lspconfig")[server_name].setup {}
+        end,
       },
     },
     dependencies = {
@@ -36,9 +51,7 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
+        "ruff", -- python formatter and linter
         "eslint_d",
       },
     },

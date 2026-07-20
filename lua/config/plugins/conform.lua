@@ -18,6 +18,7 @@ return {
       cpp = { "clang-format" }, -- C/C++
       rust = { "rustfmt", lsp_format = "fallback" },
       lua = { "stylua" },
+      python = { "ruff_organize_imports", "ruff_format" },
       ["_"] = { "trim_whitespace" }, -- default for others
     },
   },

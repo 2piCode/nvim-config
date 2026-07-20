@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
